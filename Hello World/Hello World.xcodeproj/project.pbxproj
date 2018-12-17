@@ -14,6 +14,8 @@
 		DAF25E9821B8080B009CFCA2 /* Hello_World.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAF25E9621B8080B009CFCA2 /* Hello_World.xcdatamodeld */; };
 		DAF25E9A21B8080B009CFCA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAF25E9921B8080B009CFCA2 /* Assets.xcassets */; };
 		DAF25E9D21B8080B009CFCA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF25E9B21B8080B009CFCA2 /* LaunchScreen.storyboard */; };
+		DAF25EA521B8B43F009CFCA2 /* Image in Resources */ = {isa = PBXBuildFile; fileRef = DAF25EA421B8B43F009CFCA2 /* Image */; };
+		DAFBFAF221C3515000A47EC9 /* Check.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFBFAF121C3515000A47EC9 /* Check.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,9 @@
 		DAF25E9921B8080B009CFCA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAF25E9C21B8080B009CFCA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAF25E9E21B8080B009CFCA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAF25EA421B8B43F009CFCA2 /* Image */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Image; path = ../../../../../Users/paul/Desktop/Image; sourceTree = "<group>"; };
+		DAFBFAF021C3515000A47EC9 /* Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Check.h; sourceTree = "<group>"; };
+		DAFBFAF121C3515000A47EC9 /* Check.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Check.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +49,7 @@
 		DAF25E7E21B8080B009CFCA2 = {
 			isa = PBXGroup;
 			children = (
+				DAF25EA421B8B43F009CFCA2 /* Image */,
 				DAF25E8921B8080B009CFCA2 /* Hello World */,
 				DAF25E8821B8080B009CFCA2 /* Products */,
 			);
@@ -64,6 +70,8 @@
 				DAF25E8E21B8080B009CFCA2 /* AppDelegate.m */,
 				DAF25E9021B8080B009CFCA2 /* ViewController.h */,
 				DAF25E9121B8080B009CFCA2 /* ViewController.m */,
+				DAFBFAF021C3515000A47EC9 /* Check.h */,
+				DAFBFAF121C3515000A47EC9 /* Check.m */,
 				DAF25E9321B8080B009CFCA2 /* Main.storyboard */,
 				DAF25E9921B8080B009CFCA2 /* Assets.xcassets */,
 				DAF25E9B21B8080B009CFCA2 /* LaunchScreen.storyboard */,
@@ -140,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF25EA521B8B43F009CFCA2 /* Image in Resources */,
 				DAF25E9D21B8080B009CFCA2 /* LaunchScreen.storyboard in Resources */,
 				DAF25E9A21B8080B009CFCA2 /* Assets.xcassets in Resources */,
 				DAF25E9521B8080B009CFCA2 /* Main.storyboard in Resources */,
@@ -155,6 +164,7 @@
 			files = (
 				DAF25E9221B8080B009CFCA2 /* ViewController.m in Sources */,
 				DAF25E8F21B8080B009CFCA2 /* AppDelegate.m in Sources */,
+				DAFBFAF221C3515000A47EC9 /* Check.m in Sources */,
 				DAF25E8C21B8080B009CFCA2 /* main.m in Sources */,
 				DAF25E9821B8080B009CFCA2 /* Hello_World.xcdatamodeld in Sources */,
 			);
@@ -280,6 +290,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xietong.www.Hello-World";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -291,6 +302,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xietong.www.Hello-World";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -313,6 +325,7 @@
 				DAF25EA321B8080B009CFCA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

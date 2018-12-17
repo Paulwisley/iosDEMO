@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DAF25E8621B8080B009CFCA2"
-               BuildableName = "Hello World.app"
-               BlueprintName = "Hello World"
-               ReferencedContainer = "container:Hello World.xcodeproj">
+               BlueprintIdentifier = "DAFBFAFB21C3A2BD00A47EC9"
+               BuildableName = "buttonDeme.app"
+               BlueprintName = "buttonDeme"
+               ReferencedContainer = "container:buttonDeme.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DAF25E8621B8080B009CFCA2"
-            BuildableName = "Hello World.app"
-            BlueprintName = "Hello World"
-            ReferencedContainer = "container:Hello World.xcodeproj">
+            BlueprintIdentifier = "DAFBFAFB21C3A2BD00A47EC9"
+            BuildableName = "buttonDeme.app"
+            BlueprintName = "buttonDeme"
+            ReferencedContainer = "container:buttonDeme.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DAF25E8621B8080B009CFCA2"
-            BuildableName = "Hello World.app"
-            BlueprintName = "Hello World"
-            ReferencedContainer = "container:Hello World.xcodeproj">
+            BlueprintIdentifier = "DAFBFAFB21C3A2BD00A47EC9"
+            BuildableName = "buttonDeme.app"
+            BlueprintName = "buttonDeme"
+            ReferencedContainer = "container:buttonDeme.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DAF25E8621B8080B009CFCA2"
-            BuildableName = "Hello World.app"
-            BlueprintName = "Hello World"
-            ReferencedContainer = "container:Hello World.xcodeproj">
+            BlueprintIdentifier = "DAFBFAFB21C3A2BD00A47EC9"
+            BuildableName = "buttonDeme.app"
+            BlueprintName = "buttonDeme"
+            ReferencedContainer = "container:buttonDeme.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
