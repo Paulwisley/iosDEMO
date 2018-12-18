@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>icon</key>
+		<string>10.jpg</string>
+		<key>text</key>
+		<string>fight chelsea</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>hazerd.jpg</string>
+		<key>text</key>
+		<string>hazard is the best !! !!</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>kapa.jpg</string>
+		<key>text</key>
+		<string>the young kapa~</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>Willian.jpg</string>
+		<key>text</key>
+		<string>i love wwilliam</string>
+	</dict>
+</array>
+</plist>

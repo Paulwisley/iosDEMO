@@ -54,14 +54,6 @@
                                     <action selector="moveRight" destination="BYZ-38-t0r" eventType="touchUpInside" id="2DQ-68-qYM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1c-6o-Adw">
-                                <rect key="frame" x="57" y="487" width="52" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="down"/>
-                                <connections>
-                                    <action selector="moveDown" destination="BYZ-38-t0r" eventType="touchUpInside" id="FfG-xU-eJQ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2L-y0-TVN">
                                 <rect key="frame" x="250" y="378" width="60" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -84,6 +76,14 @@
                                 <state key="normal" backgroundImage="rotate"/>
                                 <connections>
                                     <action selector="rotate" destination="BYZ-38-t0r" eventType="touchUpInside" id="WMz-lw-FXW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1c-6o-Adw">
+                                <rect key="frame" x="57" y="487" width="52" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="down"/>
+                                <connections>
+                                    <action selector="moveDown" destination="BYZ-38-t0r" eventType="touchUpInside" id="FfG-xU-eJQ"/>
                                 </connections>
                             </button>
                         </subviews>

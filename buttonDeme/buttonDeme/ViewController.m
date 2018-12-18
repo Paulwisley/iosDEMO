@@ -90,6 +90,7 @@
     self.changePic.frame = frame;
      */
     self.changePic.transform = CGAffineTransformTranslate(self.changePic.transform,-5,0);
+    self.changePic.transform = CGAffineTransformMakeTranslation(0.4, 4);
 }
 
 -(IBAction)moveRight{
