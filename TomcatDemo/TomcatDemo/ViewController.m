@@ -30,24 +30,54 @@
 
 -(IBAction)drinkMilk
 {
+    NSString *imagename =  @"drink";
+    [self changeImage:imagename inCount:81];
+
+}
+
+-(IBAction)eatFood
+{
+    NSString *imagename = @"eat";
+    [self changeImage:imagename inCount:40];
+}
+
+-(IBAction)knockHead
+{
+    NSString *imagename = @"knockout";
+    [self changeImage:imagename inCount:81];
+}
+
+
+-(IBAction)rightFoot
+{
+    NSString *imagename = @"foot_right";
+    [self changeImage:imagename inCount:30];
+}
+
+-(IBAction)leftFoot
+{
+    NSString *imagename = @"foot_left";
+    [self changeImage:imagename inCount:30];
+}
+
+-(void)changeImage:(NSString *)imgname inCount:(int)count
+{
+    if(self.imag.animating)
+        return;
     NSMutableArray *images = [NSMutableArray array];
-    for(int i = 0 ; i < 81; i++)
+    for(int i = 0 ; i < count; i++)
     {
-        NSString *imagename = [NSString stringWithFormat:@"drink_%02d",i];
+        NSString *imagename = [NSString stringWithFormat:@"%@_%02d",imgname,i];
         UIImage *img = [UIImage imageNamed:imagename];
         [images addObject:img];
     }
+    //NSLog(@"1");
     // [UIImage animatedImageNamed:<#(nonnull NSString *)#> duration:<#(NSTimeInterval)#>]
     //[UIView beginAnimations: context:]
     self.imag.animationImages = images;
-    self.imag.animationDuration = 81 * .08;
+    self.imag.animationDuration = count * .08;
     self.imag.animationRepeatCount = 1;
     [self.imag startAnimating];
-}
-
--(void)changeImage
-{
-    
 }
 
 @end
