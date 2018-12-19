@@ -39,6 +39,10 @@
     }
     // [UIImage animatedImageNamed:<#(nonnull NSString *)#> duration:<#(NSTimeInterval)#>]
     //[UIView beginAnimations: context:]
+    self.imag.animationImages = images;
+    self.imag.animationDuration = 81 * .08;
+    self.imag.animationRepeatCount = 1;
+    [self.imag startAnimating];
 }
 
 -(void)changeImage
