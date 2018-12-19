@@ -14,6 +14,7 @@
 		DA98FD6921C7DCC1009F5E21 /* ImageViewDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA98FD6721C7DCC1009F5E21 /* ImageViewDemo.xcdatamodeld */; };
 		DA98FD6B21C7DCC1009F5E21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA98FD6A21C7DCC1009F5E21 /* Assets.xcassets */; };
 		DA98FD6E21C7DCC1009F5E21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA98FD6C21C7DCC1009F5E21 /* LaunchScreen.storyboard */; };
+		DA98FD7621C91F50009F5E21 /* Imagetext.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA98FD7521C91F50009F5E21 /* Imagetext.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DA98FD6A21C7DCC1009F5E21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA98FD6D21C7DCC1009F5E21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA98FD6F21C7DCC1009F5E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA98FD7521C91F50009F5E21 /* Imagetext.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Imagetext.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +69,6 @@
 				DA98FD6421C7DCC1009F5E21 /* Main.storyboard */,
 				DA98FD6A21C7DCC1009F5E21 /* Assets.xcassets */,
 				DA98FD6C21C7DCC1009F5E21 /* LaunchScreen.storyboard */,
-				DA98FD6F21C7DCC1009F5E21 /* Info.plist */,
 				DA98FD6721C7DCC1009F5E21 /* ImageViewDemo.xcdatamodeld */,
 				DA98FD5B21C7DCC1009F5E21 /* Supporting Files */,
 			);
@@ -77,6 +78,8 @@
 		DA98FD5B21C7DCC1009F5E21 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA98FD6F21C7DCC1009F5E21 /* Info.plist */,
+				DA98FD7521C91F50009F5E21 /* Imagetext.plist */,
 				DA98FD5C21C7DCC1009F5E21 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA98FD6E21C7DCC1009F5E21 /* LaunchScreen.storyboard in Resources */,
+				DA98FD7621C91F50009F5E21 /* Imagetext.plist in Resources */,
 				DA98FD6B21C7DCC1009F5E21 /* Assets.xcassets in Resources */,
 				DA98FD6621C7DCC1009F5E21 /* Main.storyboard in Resources */,
 			);
@@ -313,6 +317,7 @@
 				DA98FD7421C7DCC1009F5E21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
