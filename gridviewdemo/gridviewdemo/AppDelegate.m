@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  TomcatDemo
+//  gridviewdemo
 //
-//  Created by Paul on 2018/12/19.
+//  Created by Paul on 2018/12/29.
 //  Copyright © 2018 Dingzhijian. All rights reserved.
 //
 
@@ -17,7 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [NSThread sleepForTimeInterval:3.0];
     return YES;
 }
 
@@ -59,7 +58,7 @@
     // The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
     @synchronized (self) {
         if (_persistentContainer == nil) {
-            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"TomcatDemo"];
+            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"gridviewdemo"];
             [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
                 if (error != nil) {
                     // Replace this implementation with code to handle the error appropriately.
