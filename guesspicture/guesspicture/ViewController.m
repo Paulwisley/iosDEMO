@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "PictureInfo.h"
 
 @interface ViewController ()
+
+@property(nonatomic, strong) PictureInfo *pictureInfo;
 
 @end
 
@@ -17,7 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
+
+-(PictureInfo *)pictureInfo{
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *path = [bundle pathForResource:@"pictureInfo" ofType:@"plist"];
+    
+}
 
 @end

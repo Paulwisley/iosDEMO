@@ -14,6 +14,8 @@
 		DA64903921EAEEA100C0953B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA64903821EAEEA100C0953B /* Assets.xcassets */; };
 		DA64903C21EAEEA100C0953B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA64903A21EAEEA100C0953B /* LaunchScreen.storyboard */; };
 		DA64903F21EAEEA100C0953B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA64903E21EAEEA100C0953B /* main.m */; };
+		DA64904A21EAF1EC00C0953B /* pictureInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA64904921EAF1EC00C0953B /* pictureInfo.plist */; };
+		DA64904D21EAF2BF00C0953B /* PictureInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA64904C21EAF2BF00C0953B /* PictureInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,9 @@
 		DA64903B21EAEEA100C0953B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA64903D21EAEEA100C0953B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA64903E21EAEEA100C0953B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DA64904921EAF1EC00C0953B /* pictureInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = pictureInfo.plist; path = "../../../../../Desktop/day04（超级猜图）/资料/pictureInfo.plist"; sourceTree = "<group>"; };
+		DA64904B21EAF2BF00C0953B /* PictureInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PictureInfo.h; sourceTree = "<group>"; };
+		DA64904C21EAF2BF00C0953B /* PictureInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,14 +69,25 @@
 				DA64902D21EAEE9F00C0953B /* AppDelegate.m */,
 				DA64902F21EAEE9F00C0953B /* ViewController.h */,
 				DA64903021EAEE9F00C0953B /* ViewController.m */,
+				DA64904B21EAF2BF00C0953B /* PictureInfo.h */,
+				DA64904C21EAF2BF00C0953B /* PictureInfo.m */,
 				DA64903221EAEE9F00C0953B /* Main.storyboard */,
 				DA64903821EAEEA100C0953B /* Assets.xcassets */,
 				DA64903A21EAEEA100C0953B /* LaunchScreen.storyboard */,
-				DA64903D21EAEEA100C0953B /* Info.plist */,
 				DA64903E21EAEEA100C0953B /* main.m */,
 				DA64903521EAEE9F00C0953B /* guesspicture.xcdatamodeld */,
+				DA64904621EAEFCE00C0953B /* Support */,
 			);
 			path = guesspicture;
+			sourceTree = "<group>";
+		};
+		DA64904621EAEFCE00C0953B /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				DA64903D21EAEEA100C0953B /* Info.plist */,
+				DA64904921EAF1EC00C0953B /* pictureInfo.plist */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +149,7 @@
 			files = (
 				DA64903C21EAEEA100C0953B /* LaunchScreen.storyboard in Resources */,
 				DA64903921EAEEA100C0953B /* Assets.xcassets in Resources */,
+				DA64904A21EAF1EC00C0953B /* pictureInfo.plist in Resources */,
 				DA64903421EAEE9F00C0953B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +164,7 @@
 				DA64903121EAEE9F00C0953B /* ViewController.m in Sources */,
 				DA64903721EAEE9F00C0953B /* guesspicture.xcdatamodeld in Sources */,
 				DA64903F21EAEEA100C0953B /* main.m in Sources */,
+				DA64904D21EAF2BF00C0953B /* PictureInfo.m in Sources */,
 				DA64902E21EAEE9F00C0953B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +316,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dzj.guesspicture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOTS)/**";
 			};
 			name = Debug;
 		};
@@ -314,6 +333,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dzj.guesspicture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOTS)/**";
 			};
 			name = Release;
 		};
