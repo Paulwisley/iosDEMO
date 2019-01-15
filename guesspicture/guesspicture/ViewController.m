@@ -125,8 +125,11 @@
 //获取下一组图
 -(IBAction)btnNextQ{
     self.index++;
-    [self initAnswerSubview: _pictureInfo[self.index] WithSubview:self.answerview];
-    [self initOptionSubview: _pictureInfo[self.index] WithSubiew:self.panelView];
+    PictureInfo *picinfo = [[PictureInfo alloc] init];
+    picinfo = self.pictureInfo[self.index];
+    self.image.image = [UIImage imageNamed:picinfo.icon];
+    [self initAnswerSubview: picinfo WithSubview:self.answerview];
+    [self initOptionSubview: picinfo WithSubiew:self.panelView];
 }
 
 -(IBAction)btnLastQ{
