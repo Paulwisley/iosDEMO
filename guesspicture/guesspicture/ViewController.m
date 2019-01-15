@@ -25,7 +25,6 @@
 -(IBAction)btnEnlarge;
 -(IBAction)btnShare;
 -(void)initAll;
--(void)initSubview:(PictureInfo *) picinfo WithSubview:(UIView *)subview;
 @end
 
 @implementation ViewController
@@ -86,7 +85,7 @@
         CGFloat btnW = 40;
         CGFloat btnH = 43;
         CGFloat btnX = (subview.frame.size.width - anscount * btnW - (anscount - 1) * 10) / 2 + (10 + btnW) * i;
-        CGFloat btnY = [subview viewWithTag:23].frame.origin.y;
+        CGFloat btnY = 0;
         ans.frame = CGRectMake(btnX, btnY, btnW, btnH);
         [ans setTitle: @"" forState:UIControlStateNormal];
         //ans.enabled = YES;
@@ -112,7 +111,7 @@
         CGFloat btnW = (subview.frame.size.width - 8 * margin) / 7;
         CGFloat btnH = (subview.frame.size.height  - 4 * margin) / 3;
         CGFloat btnX = margin * (1 + col) + col * btnW ;
-        CGFloat btnY = subview.frame.origin.y + margin * (1 + row) + row * btnH;
+        CGFloat btnY = margin * (1 + row) + row * btnH;
         option.frame = CGRectMake(btnX, btnY, btnW, btnH);
         [option setTitle:picinfo.options[i] forState:UIControlStateNormal];
     }
