@@ -17,6 +17,7 @@
 @property(nonatomic, weak) IBOutlet UIImageView *image;
 @property(nonatomic, weak) IBOutlet UIView *answerview;
 @property(nonatomic, weak) IBOutlet UIView *panelView;
+@property(nonatomic, assign) int index; //控制图片索引
 
 @property(nonatomic, weak)IBOutlet UIButton *coin;
 -(IBAction)btnHelp;
@@ -121,8 +122,11 @@
     
 }
 
+//获取下一组图
 -(IBAction)btnNextQ{
-    
+    self.index++;
+    [self initAnswerSubview: _pictureInfo[self.index] WithSubview:self.answerview];
+    [self initOptionSubview: _pictureInfo[self.index] WithSubiew:self.panelView];
 }
 
 -(IBAction)btnLastQ{
