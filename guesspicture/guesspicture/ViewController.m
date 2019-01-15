@@ -67,27 +67,54 @@
     self.labelIndex.text = indexText;
     self.labelTitle.text = info.title;
     self.image.image = [UIImage imageNamed:info.icon];
-    [self initSubview:info WithSubview:self.answerview];
+    [self initAnswerSubview:info WithSubview:self.answerview];
+    [self initOptionSubview:info WithSubiew:self.panelView];
 }
 
 //初始化备选框和答案区域内容
--(void)initSubview:(PictureInfo *)picinfo WithSubview:(UIView *)subview{
+//初始化答案区域
+-(void)initAnswerSubview:(PictureInfo *)picinfo WithSubview:(UIView *)subview{
     [subview.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    int count = (int)[picinfo.answer length];
-    NSLog(@"%d",count);
-    for(int i = 0; i < count; i++){
+    int anscount = (int)[picinfo.answer length];
+//    NSLog(@"%d",count);
+    for(int i = 0; i < anscount; i++){
         UIButton *ans = [[UIButton alloc] init];
         [subview addSubview: ans];
-        [ans setTitle: @"d" forState:UIControlStateNormal];
         [ans setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [ans setBackgroundImage:[UIImage imageNamed:@"btn_answer"]forState:UIControlStateNormal];
+        [ans setBackgroundImage:[UIImage imageNamed:@"btn_answer_highlighted"] forState:UIControlStateHighlighted];
         CGFloat btnW = 40;
         CGFloat btnH = 43;
-        CGFloat btnX = (subview.frame.size.width - count * btnW - (count - 1) * 10) / 2 + (10 + btnW) * i;
+        CGFloat btnX = (subview.frame.size.width - anscount * btnW - (anscount - 1) * 10) / 2 + (10 + btnW) * i;
         CGFloat btnY = [subview viewWithTag:23].frame.origin.y;
         ans.frame = CGRectMake(btnX, btnY, btnW, btnH);
-        ans.enabled = YES;
+        [ans setTitle: @"" forState:UIControlStateNormal];
+        //ans.enabled = YES;
         //[self.view.subview[]
+    }
+}
+
+//初始化备选框
+-(void)initOptionSubview:(PictureInfo *)picinfo WithSubiew:(UIView *)subview{
+    [subview.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];//所有的控件都执行remove方法
+    //init option view
+    NSInteger optioncount = picinfo.options.count;
+    for(int i = 0; i < optioncount; i++){
+        UIButton *option = [[UIButton alloc] init];
+        [subview addSubview:option];
+        [option setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [option setBackgroundImage:[UIImage imageNamed:@"btn_answer"] forState:UIControlStateNormal];
+        [option setBackgroundImage:[UIImage imageNamed:@"btn_answer_highlighted"] forState:UIControlStateHighlighted];
+        //计算各个小btn的位置
+        int col = i % 7;
+        int row = i / 7;
+        int margin = 10;
+        CGFloat btnW = (subview.frame.size.width - 8 * margin) / 7;
+        CGFloat btnH = (subview.frame.size.height  - 4 * margin) / 3;
+        CGFloat btnX = margin * (1 + col) + col * btnW ;
+        CGFloat btnY = subview.frame.origin.y + margin * (1 + row) + row * btnH;
+        option.frame = CGRectMake(btnX, btnY, btnW, btnH);
+        [option setTitle:picinfo.options[i] forState:UIControlStateNormal];
     }
 }
 
