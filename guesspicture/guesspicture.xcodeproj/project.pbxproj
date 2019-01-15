@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA55332921ED834D0004B9B0 /* pictureInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA55332821ED834D0004B9B0 /* pictureInfo.plist */; };
 		DA64902E21EAEE9F00C0953B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA64902D21EAEE9F00C0953B /* AppDelegate.m */; };
 		DA64903121EAEE9F00C0953B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA64903021EAEE9F00C0953B /* ViewController.m */; };
 		DA64903421EAEE9F00C0953B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA64903221EAEE9F00C0953B /* Main.storyboard */; };
 		DA64903721EAEE9F00C0953B /* guesspicture.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA64903521EAEE9F00C0953B /* guesspicture.xcdatamodeld */; };
 		DA64903921EAEEA100C0953B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA64903821EAEEA100C0953B /* Assets.xcassets */; };
-		DA64903C21EAEEA100C0953B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA64903A21EAEEA100C0953B /* LaunchScreen.storyboard */; };
 		DA64903F21EAEEA100C0953B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA64903E21EAEEA100C0953B /* main.m */; };
-		DA64904A21EAF1EC00C0953B /* pictureInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA64904921EAF1EC00C0953B /* pictureInfo.plist */; };
 		DA64904D21EAF2BF00C0953B /* PictureInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA64904C21EAF2BF00C0953B /* PictureInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA55332821ED834D0004B9B0 /* pictureInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pictureInfo.plist; sourceTree = "<group>"; };
 		DA64902921EAEE9F00C0953B /* guesspicture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = guesspicture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA64902C21EAEE9F00C0953B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA64902D21EAEE9F00C0953B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -27,10 +27,7 @@
 		DA64903321EAEE9F00C0953B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA64903621EAEE9F00C0953B /* guesspicture.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = guesspicture.xcdatamodel; sourceTree = "<group>"; };
 		DA64903821EAEEA100C0953B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DA64903B21EAEEA100C0953B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DA64903D21EAEEA100C0953B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA64903E21EAEEA100C0953B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DA64904921EAF1EC00C0953B /* pictureInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = pictureInfo.plist; path = "../../../../../Desktop/day04（超级猜图）/资料/pictureInfo.plist"; sourceTree = "<group>"; };
 		DA64904B21EAF2BF00C0953B /* PictureInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PictureInfo.h; sourceTree = "<group>"; };
 		DA64904C21EAF2BF00C0953B /* PictureInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,7 +70,6 @@
 				DA64904C21EAF2BF00C0953B /* PictureInfo.m */,
 				DA64903221EAEE9F00C0953B /* Main.storyboard */,
 				DA64903821EAEEA100C0953B /* Assets.xcassets */,
-				DA64903A21EAEEA100C0953B /* LaunchScreen.storyboard */,
 				DA64903E21EAEEA100C0953B /* main.m */,
 				DA64903521EAEE9F00C0953B /* guesspicture.xcdatamodeld */,
 				DA64904621EAEFCE00C0953B /* Support */,
@@ -84,8 +80,7 @@
 		DA64904621EAEFCE00C0953B /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				DA64903D21EAEEA100C0953B /* Info.plist */,
-				DA64904921EAF1EC00C0953B /* pictureInfo.plist */,
+				DA55332821ED834D0004B9B0 /* pictureInfo.plist */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -147,9 +142,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA64903C21EAEEA100C0953B /* LaunchScreen.storyboard in Resources */,
+				DA55332921ED834D0004B9B0 /* pictureInfo.plist in Resources */,
 				DA64903921EAEEA100C0953B /* Assets.xcassets in Resources */,
-				DA64904A21EAF1EC00C0953B /* pictureInfo.plist in Resources */,
 				DA64903421EAEE9F00C0953B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,14 +172,6 @@
 				DA64903321EAEE9F00C0953B /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		DA64903A21EAEEA100C0953B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DA64903B21EAEEA100C0953B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -307,7 +293,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M2V2575Y4P;
 				INFOPLIST_FILE = guesspicture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -324,7 +312,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M2V2575Y4P;
 				INFOPLIST_FILE = guesspicture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

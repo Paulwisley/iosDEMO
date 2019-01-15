@@ -13,7 +13,6 @@
 		DA144CE721D709A900FF0ECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA144CE521D709A900FF0ECE /* Main.storyboard */; };
 		DA144CEA21D709A900FF0ECE /* gridviewdemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA144CE821D709A900FF0ECE /* gridviewdemo.xcdatamodeld */; };
 		DA144CEC21D709A900FF0ECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA144CEB21D709A900FF0ECE /* Assets.xcassets */; };
-		DA144CEF21D709A900FF0ECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA144CED21D709A900FF0ECE /* LaunchScreen.storyboard */; };
 		DA144CFB21D70F1200FF0ECE /* pics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA144CFA21D70F1200FF0ECE /* pics.plist */; };
 		DA144CFE21D71E0800FF0ECE /* subApp.m in Sources */ = {isa = PBXBuildFile; fileRef = DA144CFD21D71E0800FF0ECE /* subApp.m */; };
 		DADB96A721E83FE200584952 /* CZView.m in Sources */ = {isa = PBXBuildFile; fileRef = DADB96A621E83FE200584952 /* CZView.m */; };
@@ -30,7 +29,6 @@
 		DA144CE621D709A900FF0ECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA144CE921D709A900FF0ECE /* gridviewdemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = gridviewdemo.xcdatamodel; sourceTree = "<group>"; };
 		DA144CEB21D709A900FF0ECE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DA144CEE21D709A900FF0ECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA144CF021D709A900FF0ECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA144CFA21D70F1200FF0ECE /* pics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pics.plist; sourceTree = "<group>"; };
 		DA144CFC21D71E0800FF0ECE /* subApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = subApp.h; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 			children = (
 				DAE8F5B821E338CB006EF408 /* APPInfoView.xib */,
 				DA144CE521D709A900FF0ECE /* Main.storyboard */,
-				DA144CED21D709A900FF0ECE /* LaunchScreen.storyboard */,
 				DADB96A521E83FE200584952 /* CZView.h */,
 				DADB96A621E83FE200584952 /* CZView.m */,
 			);
@@ -188,7 +185,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA144CEF21D709A900FF0ECE /* LaunchScreen.storyboard in Resources */,
 				DA144CEC21D709A900FF0ECE /* Assets.xcassets in Resources */,
 				DA144CE721D709A900FF0ECE /* Main.storyboard in Resources */,
 				DA144CFB21D70F1200FF0ECE /* pics.plist in Resources */,
@@ -221,14 +217,6 @@
 				DA144CE621D709A900FF0ECE /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		DA144CED21D709A900FF0ECE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DA144CEE21D709A900FF0ECE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
