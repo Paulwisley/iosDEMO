@@ -17,15 +17,22 @@
 @property(nonatomic, weak) IBOutlet UIImageView *image;
 @property(nonatomic, weak) IBOutlet UIView *answerview;
 @property(nonatomic, weak) IBOutlet UIView *panelView;
-@property(nonatomic, assign) int index; //控制图片索引
+@property(nonatomic, weak) IBOutlet UIButton *btnlast;
+@property(nonatomic, weak) IBOutlet UIButton *btnnext;
+@property(nonatomic, weak) IBOutlet UIButton *coin;
 
-@property(nonatomic, weak)IBOutlet UIButton *coin;
+@property(nonatomic, assign) int index; //控制图片索引
+@property(nonatomic, weak) UIButton *coverview; //遮盖按钮
+@property(nonatomic, assign) CGRect oldframe; //保存原有的图片frame
+
 -(IBAction)btnHelp;
 -(IBAction)btnNextQ;
 -(IBAction)btnLastQ;
 -(IBAction)btnEnlarge;
 -(IBAction)btnShare;
+
 -(void)initAll;
+
 @end
 
 @implementation ViewController
@@ -66,9 +73,13 @@
     NSString *indexText = [NSString stringWithFormat:@"1/%lu",self.pictureInfo.count];
     self.labelIndex.text = indexText;
     self.labelTitle.text = info.title;
+    self.btnlast.enabled = NO;//暂时不让点
+    self.coin.userInteractionEnabled = NO;
     self.image.image = [UIImage imageNamed:info.icon];
     [self initAnswerSubview:info WithSubview:self.answerview];
     [self initOptionSubview:info WithSubiew:self.panelView];
+    UITapGestureRecognizer *uitaggest = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictClick)];
+    [self.image addGestureRecognizer:uitaggest];
 }
 
 //初始化备选框和答案区域内容
@@ -125,19 +136,92 @@
 //获取下一组图
 -(IBAction)btnNextQ{
     self.index++;
+    if(self.index == _pictureInfo.count - 1){
+        self.btnnext.enabled = NO;
+        self.btnlast.enabled = YES;
+        //undo add alert
+    }else{
+        self.btnnext.enabled = YES;
+        self.btnlast.enabled = YES;
+    }
     PictureInfo *picinfo = [[PictureInfo alloc] init];
     picinfo = self.pictureInfo[self.index];
     self.image.image = [UIImage imageNamed:picinfo.icon];
+    NSString *labeltext = [NSString stringWithFormat:@"%d/%lu",self.index+1,_pictureInfo.count];
+    self.labelIndex.text = labeltext;
     [self initAnswerSubview: picinfo WithSubview:self.answerview];
     [self initOptionSubview: picinfo WithSubiew:self.panelView];
+    //undo not set constraint
 }
 
+//获取上一组图
 -(IBAction)btnLastQ{
-    
+    self.index--;
+    if(self.index == 0){
+        self.btnlast.enabled = NO;
+        self.btnnext.enabled = YES;
+        //undo add alert
+    }else{
+        self.btnlast.enabled = YES;
+        self.btnnext.enabled = YES;
+    }
+    PictureInfo *picinfo = [[PictureInfo alloc] init];
+    picinfo = self.pictureInfo[self.index];
+    NSString *labeltext = [NSString stringWithFormat:@"%d/%lu",self.index+1,_pictureInfo.count];
+    self.labelIndex.text = labeltext;
+    self.image.image = [UIImage imageNamed: picinfo.icon];
+    [self initAnswerSubview:picinfo WithSubview:self.answerview];
+    [self initOptionSubview:picinfo WithSubiew:self.panelView];
+    //uudo not set constraint
 }
 
+//点开大图
 -(IBAction)btnEnlarge{
+//改变现有图片的frame
+//返回原来图片的控制区域设定
+    self.oldframe = self.image.frame;
+    CGFloat picW = self.view.frame.size.width;
+    CGFloat picH = picW;
+    CGFloat picX = 0;
+    CGFloat picY = (self.view.frame.size.height - picH) / 2;
+    //self.image.frame = CGRectMake(picX, picY, picW, picH);
     
+    //新生成一个覆盖按钮 覆盖剩余部分
+    UIButton *cover = [[UIButton alloc] init];
+    [self.view addSubview:cover];
+    self.coverview = cover;
+    cover.frame = self.view.bounds;
+    [cover setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    cover.alpha = 0;
+    
+    //将当前view的一个子view置于顶层
+    [self.view bringSubviewToFront:self.image];
+    //动画
+    [UIView animateWithDuration:1.0 animations:^{
+        self.image.frame = CGRectMake(picX, picY, picW, picH);
+        cover.alpha = 0.5;
+    }];
+    
+    [cover addTarget:self action:@selector(smallPic) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)smallPic{
+    [UIView animateWithDuration:1.0 animations:^{
+        self.image.frame = self.oldframe;
+        self.coverview.alpha = 0;
+    }
+   completion:^(BOOL finished) {
+         [self.coverview removeFromSuperview];
+    }];
+}
+
+-(void)pictClick:(UIGestureRecognizer *)tag{
+    self.image = (UIImageView *)tag.view;
+    if(self.coverview == nil){
+        [self btnEnlarge];
+    }else{
+        [self smallPic];
+    }
 }
 
 -(IBAction)btnShare{

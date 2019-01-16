@@ -26,6 +26,11 @@
                                 <rect key="frame" x="96" y="134" width="183" height="171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mR3-al-W3T">
+                                <rect key="frame" x="0.0" y="-2" width="375" height="669"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5f-W4-QnI">
                                 <rect key="frame" x="0.0" y="155" width="75" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -122,6 +127,8 @@
                     </view>
                     <connections>
                         <outlet property="answerview" destination="5Cr-MT-SOh" id="znB-8F-JXz"/>
+                        <outlet property="btnlast" destination="u6f-9X-lnh" id="ldO-u7-vF8"/>
+                        <outlet property="btnnext" destination="8qE-do-hnh" id="OQZ-AJ-l3K"/>
                         <outlet property="coin" destination="hLO-4I-JaG" id="88z-vc-qbj"/>
                         <outlet property="image" destination="sEn-z6-niI" id="13z-BS-oj0"/>
                         <outlet property="labelIndex" destination="xcj-Ur-Voh" id="V0x-4Q-tUE"/>
