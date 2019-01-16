@@ -127,6 +127,7 @@
         CGFloat btnY = margin * (1 + row) + row * btnH;
         option.frame = CGRectMake(btnX, btnY, btnW, btnH);
         [option setTitle:picinfo.options[i] forState:UIControlStateNormal];
+        [option addTarget:self action:@selector(matchAnswer:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
 
@@ -219,10 +220,8 @@
 -(void)pictClick{
     if(self.coverview == nil){
         [self btnEnlarge];
-        NSLog(@"1");
     }else{
         [self smallPic];
-        NSLog(@"2");
     }
 }
 
@@ -230,7 +229,16 @@
     
 }
 
--(void)matc{
-    
+-(void)matchAnswer:(UIButton *)option{
+    //找到答案区域还未初始化的view， 用当下btn的值赋给答案区域
+    for (UIButton *btn in self.answerview.subviews) {
+        if(btn.titleLabel == nil){
+            [btn setTitle:option.titleLabel.text forState:UIControlStateNormal];
+            btn.tag = option.tag; //传入指定tag 以便之后发生错误进行回退
+        }
+    }
+    [UIView animateWithDuration:1.0 animations:^{
+        [option removeFromSuperview];
+    }];
 }
 @end
