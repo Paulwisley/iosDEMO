@@ -90,7 +90,7 @@
     int anscount = (int)[picinfo.answer length];
 //    NSLog(@"%d",count);
     for(int i = 0; i < anscount; i++){
-        UIButton *ans = [[UIButton alloc] init];
+        UIButton *ans = [UIButton buttonWithType:UIButtonTypeCustom];
         [subview addSubview: ans];
         [ans setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [ans setBackgroundImage:[UIImage imageNamed:@"btn_answer"]forState:UIControlStateNormal];
@@ -229,16 +229,16 @@
     
 }
 
--(void)matchAnswer:(UIButton *)option{
+-(void)matchAnswer:(UIButton *)sender {
     //找到答案区域还未初始化的view， 用当下btn的值赋给答案区域
+    sender.hidden = YES;
     for (UIButton *btn in self.answerview.subviews) {
-        if(btn.titleLabel == nil){
-            [btn setTitle:option.titleLabel.text forState:UIControlStateNormal];
-            btn.tag = option.tag; //传入指定tag 以便之后发生错误进行回退
+        //NSLog(@"%@",btn.currentTitle);
+        if([btn.currentTitle isEqualToString:@""]){
+            [btn setTitle:sender.currentTitle forState:UIControlStateNormal];
+            btn.tag = sender.tag; //传入指定tag 以便之后发生错误进行回退
+            break;
         }
     }
-    [UIView animateWithDuration:1.0 animations:^{
-        [option removeFromSuperview];
-    }];
 }
 @end
