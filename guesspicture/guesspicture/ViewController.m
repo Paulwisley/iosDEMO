@@ -24,6 +24,7 @@
 @property(nonatomic, assign) int index; //控制图片索引
 @property(nonatomic, weak) UIButton *coverview; //遮盖按钮
 @property(nonatomic, assign) CGRect oldframe; //保存原有的图片frame
+@property(nonatomic, copy) NSMutableArray *correctcount; //正确的题目数
 
 -(IBAction)btnHelp;
 -(IBAction)btnNextQ;
@@ -81,6 +82,7 @@
     UITapGestureRecognizer *uitapgest = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictClick)];
     [self.image addGestureRecognizer:uitapgest];
     self.image.userInteractionEnabled = YES;
+    
 }
 
 //初始化备选框和答案区域内容
@@ -101,6 +103,7 @@
         CGFloat btnY = 0;
         ans.frame = CGRectMake(btnX, btnY, btnW, btnH);
         [ans setTitle: @"" forState:UIControlStateNormal];
+        [ans addTarget:self action:@selector(resetAnswer:) forControlEvents:UIControlEventTouchUpInside];
         //ans.enabled = YES;
         //[self.view.subview[]
     }
@@ -126,6 +129,7 @@
         CGFloat btnX = margin * (1 + col) + col * btnW ;
         CGFloat btnY = margin * (1 + row) + row * btnH;
         option.frame = CGRectMake(btnX, btnY, btnW, btnH);
+        option.tag = i+1;
         [option setTitle:picinfo.options[i] forState:UIControlStateNormal];
         [option addTarget:self action:@selector(matchAnswer:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -137,6 +141,7 @@
 
 //获取下一组图
 -(IBAction)btnNextQ{
+    self.panelView.userInteractionEnabled = YES;
     self.index++;
     if(self.index == _pictureInfo.count - 1){
         self.btnnext.enabled = NO;
@@ -240,5 +245,73 @@
             break;
         }
     }
+    BOOL isFull = YES;
+    NSMutableString *strAns = [NSMutableString string];
+    for (UIButton * btn in self.answerview.subviews) {
+        if([btn.currentTitle isEqualToString:@""]){
+            isFull = NO;
+            break;
+        }
+        [strAns appendString:btn.currentTitle];
+    }
+    if(isFull){
+        //所有答案框都被填满 禁止输入
+        self.panelView.userInteractionEnabled = NO;
+        if([self isCheckAnswer:strAns]){
+            //通知正确
+            //更改ans字体
+            [self setAllBtnColor:[UIColor blueColor]];
+             /***加分
+              1. 先将正确的题号加入正确题数的统计数组中
+              2. 获取当前分数值
+              3. 加分
+              */
+            [self.correctcount addObject:[NSNumber numberWithInt: self.index]];//加入正确题号
+            int score = [self.coin.titleLabel.text intValue];//使用intValue 转成int
+            score += 500;
+            [self.coin setTitle:[NSString stringWithFormat:@"%d",score] forState: UIControlStateNormal];
+            //self.panelView.userInteractionEnabled = YES;//恢复选择面板的使用
+            //自动进入下一题
+            [self performSelector:@selector(btnNextQ) withObject:nil afterDelay:1.0];
+            return;
+        }else{
+            [strAns setString:@""];
+            //扣分
+            int score = [self.coin.titleLabel.text intValue];//使用intValue 转成int
+            score -= 500;
+            [self.coin setTitle:[NSString stringWithFormat:@"%d",score] forState: UIControlStateNormal];
+            //更改字体颜色
+            [self  setAllBtnColor:[UIColor redColor]];
+            //通知错误
+        }
+    }
 }
+
+-(void)resetAnswer:(UIButton *)sender{
+    self.panelView.userInteractionEnabled = YES;
+    [sender setTitle:nil forState:UIControlStateNormal];
+    for (UIButton *btn in self.panelView.subviews) {
+        if(btn.tag == sender.tag)
+        {
+            btn.hidden = NO;
+            break;
+        }
+    }
+}
+
+-(BOOL)isCheckAnswer:(NSString *)comp{
+    PictureInfo *picinfo = [[PictureInfo alloc] init];
+    picinfo = self.pictureInfo[self.index];
+    if([comp isEqualToString:picinfo.answer])
+        return YES;
+    return NO;
+}
+
+//设置所有按钮的颜色
+-(void)setAllBtnColor:(UIColor *) color{
+    for (UIButton *btn in self.answerview.subviews) {
+        [btn setTitleColor:color forState:UIControlStateNormal];
+    }
+}
+
 @end
