@@ -78,8 +78,9 @@
     self.image.image = [UIImage imageNamed:info.icon];
     [self initAnswerSubview:info WithSubview:self.answerview];
     [self initOptionSubview:info WithSubiew:self.panelView];
-    UITapGestureRecognizer *uitaggest = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictClick)];
-    [self.image addGestureRecognizer:uitaggest];
+    UITapGestureRecognizer *uitapgest = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictClick)];
+    [self.image addGestureRecognizer:uitapgest];
+    self.image.userInteractionEnabled = YES;
 }
 
 //初始化备选框和答案区域内容
@@ -215,12 +216,13 @@
     }];
 }
 
--(void)pictClick:(UIGestureRecognizer *)tag{
-    self.image = (UIImageView *)tag.view;
+-(void)pictClick{
     if(self.coverview == nil){
         [self btnEnlarge];
+        NSLog(@"1");
     }else{
         [self smallPic];
+        NSLog(@"2");
     }
 }
 
@@ -228,4 +230,7 @@
     
 }
 
+-(void)matc{
+    
+}
 @end
