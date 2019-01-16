@@ -102,8 +102,8 @@
         CGFloat btnX = (subview.frame.size.width - anscount * btnW - (anscount - 1) * 10) / 2 + (10 + btnW) * i;
         CGFloat btnY = 0;
         ans.frame = CGRectMake(btnX, btnY, btnW, btnH);
-        [ans setTitle: @"" forState:UIControlStateNormal];
         [ans addTarget:self action:@selector(resetAnswer:) forControlEvents:UIControlEventTouchUpInside];
+        //NSLog(@"%d",ans.currentTitle == nil);
         //ans.enabled = YES;
         //[self.view.subview[]
     }
@@ -142,6 +142,8 @@
 //获取下一组图
 -(IBAction)btnNextQ{
     self.panelView.userInteractionEnabled = YES;
+    //将答案框的字体颜色重置
+    [self setAllBtnColor:[UIColor blackColor]];
     self.index++;
     if(self.index == _pictureInfo.count - 1){
         self.btnnext.enabled = NO;
@@ -239,7 +241,14 @@
     sender.hidden = YES;
     for (UIButton *btn in self.answerview.subviews) {
         //NSLog(@"%@",btn.currentTitle);
-        if([btn.currentTitle isEqualToString:@""]){
+        /**
+         对于btn.currentTite 的理解
+         首先， currentTitle是一个readonly变量
+         未对title进行初始化时 currentTitle 其值为nil
+         但归根结底 这是一个NSString类型变量
+         */
+        if(btn.currentTitle == nil){
+            //NSLog(@"3");
             [btn setTitle:sender.currentTitle forState:UIControlStateNormal];
             btn.tag = sender.tag; //传入指定tag 以便之后发生错误进行回退
             break;
@@ -248,7 +257,7 @@
     BOOL isFull = YES;
     NSMutableString *strAns = [NSMutableString string];
     for (UIButton * btn in self.answerview.subviews) {
-        if([btn.currentTitle isEqualToString:@""]){
+        if(btn.currentTitle == nil){
             isFull = NO;
             break;
         }
@@ -275,7 +284,7 @@
             [self performSelector:@selector(btnNextQ) withObject:nil afterDelay:1.0];
             return;
         }else{
-            [strAns setString:@""];
+            //[strAns setString:@""];
             //扣分
             int score = [self.coin.titleLabel.text intValue];//使用intValue 转成int
             score -= 500;
@@ -288,6 +297,7 @@
 }
 
 -(void)resetAnswer:(UIButton *)sender{
+    [self setAllBtnColor:[UIColor blackColor]];
     self.panelView.userInteractionEnabled = YES;
     [sender setTitle:nil forState:UIControlStateNormal];
     for (UIButton *btn in self.panelView.subviews) {
