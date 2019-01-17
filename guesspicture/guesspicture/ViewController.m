@@ -24,7 +24,7 @@
 @property(nonatomic, assign) int index; //控制图片索引
 @property(nonatomic, weak) UIButton *coverview; //遮盖按钮
 @property(nonatomic, assign) CGRect oldframe; //保存原有的图片frame
-@property(nonatomic, copy) NSMutableArray *correctcount; //正确的题目数
+@property(nonatomic, strong) NSMutableArray *correctcount; //正确的题目数
 
 -(IBAction)btnHelp;
 -(IBAction)btnNextQ;
@@ -82,7 +82,8 @@
     UITapGestureRecognizer *uitapgest = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictClick)];
     [self.image addGestureRecognizer:uitapgest];
     self.image.userInteractionEnabled = YES;
-    
+    //初始化NSMutableArray
+    self.correctcount = [NSMutableArray array];
 }
 
 //初始化备选框和答案区域内容
@@ -148,19 +149,17 @@
     if(self.index == _pictureInfo.count - 1){
         self.btnnext.enabled = NO;
         self.btnlast.enabled = YES;
-        //undo add alert
     }else{
         self.btnnext.enabled = YES;
         self.btnlast.enabled = YES;
     }
-    PictureInfo *picinfo = [[PictureInfo alloc] init];
-    picinfo = self.pictureInfo[self.index];
+    PictureInfo *picinfo = self.pictureInfo[self.index];
     self.image.image = [UIImage imageNamed:picinfo.icon];
     NSString *labeltext = [NSString stringWithFormat:@"%d/%lu",self.index+1,_pictureInfo.count];
     self.labelIndex.text = labeltext;
     [self initAnswerSubview: picinfo WithSubview:self.answerview];
     [self initOptionSubview: picinfo WithSubiew:self.panelView];
-    //undo not set constraint
+    
 }
 
 //获取上一组图
@@ -267,7 +266,14 @@
         //所有答案框都被填满 禁止输入
         self.panelView.userInteractionEnabled = NO;
         if([self isCheckAnswer:strAns]){
-            //通知正确
+            [self.correctcount addObject:[NSNumber numberWithInt: self.index]];//加入正确题号
+            //所有题答完通知正确
+            if(self.correctcount.count == self.pictureInfo.count){
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"恭喜你，过关啦!" preferredStyle:UIAlertControllerStyleAlert];
+                [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:nil]];
+                [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
             //更改ans字体
             [self setAllBtnColor:[UIColor blueColor]];
              /***加分
@@ -275,13 +281,13 @@
               2. 获取当前分数值
               3. 加分
               */
-            [self.correctcount addObject:[NSNumber numberWithInt: self.index]];//加入正确题号
             int score = [self.coin.titleLabel.text intValue];//使用intValue 转成int
             score += 500;
             [self.coin setTitle:[NSString stringWithFormat:@"%d",score] forState: UIControlStateNormal];
             //self.panelView.userInteractionEnabled = YES;//恢复选择面板的使用
             //自动进入下一题
-            [self performSelector:@selector(btnNextQ) withObject:nil afterDelay:1.0];
+            if(self.index < self.pictureInfo.count - 1)
+                [self performSelector:@selector(btnNextQ) withObject:nil afterDelay:1.0];
             return;
         }else{
             //[strAns setString:@""];
